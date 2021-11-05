@@ -22,7 +22,6 @@ export const fetchSmurfs = () => {
 };
 
 export const fetchStart = () => {
-  console.log("this is the action");
   return { type: FETCH_START };
 };
 
