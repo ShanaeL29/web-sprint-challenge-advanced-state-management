@@ -2,14 +2,14 @@ import {
   FETCH_START,
   FETCH_SUCCESS,
   FETCH_FAIL,
-  ADD_SMURFS,
-  ERROR,
-} from "../actions/index";
+  ADD_SMURF,
+  ERROR_MESSAGE,
+} from "../actions";
 
 export const initialState = {
   smurfs: [],
   isLoading: false,
-  error: "",
+  errorMessage: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,30 +19,36 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
-        error: "",
+        errorMessage: "",
       };
     case FETCH_SUCCESS:
+      console.log("this is fetch success");
       return {
         ...state,
-        isLoading: false,
         smurfs: action.payload,
-        error: "",
+        isLoading: false,
+        errorMessage: "",
       };
     case FETCH_FAIL:
+      console.log("this is fetch fail");
       return {
         ...state,
         isLoading: false,
-        error: action.payload,
+        errorMessage: action.payload,
       };
-    case ADD_SMURFS:
+    // ----------------------------------------------------------------------------------------------
+    case ADD_SMURF:
       return {
         ...state,
         smurfs: [...state.smurfs, action.payload],
       };
-    case ERROR:
+    // -----------------------------------------------------------------------------------------
+    case ERROR_MESSAGE:
+      console.log("this is error message");
       return {
         ...state,
-        error: action.payload,
+        errorMessage: "An error has occurred",
+        // errorMessage: action.payload,
       };
 
     default:
