@@ -36,11 +36,11 @@ export const fetchFail = (error) => {
   return { type: FETCH_FAIL, payload: error };
 };
 
-export const addSmurf = (data) => {
-  return { type: ADD_SMURF, payload: data };
+export const addSmurf = (smurf) => {
+  return { type: ADD_SMURF, payload: smurf };
 };
 
-// export function addSmurf(name, nickname, position, description) {
+// export const addSmurf = (name, nickname, position, description) => {
 //   return function () {
 //     return axios
 //       .post(`http://localhost:3333/smurfs`, {
@@ -56,7 +56,7 @@ export const addSmurf = (data) => {
 //         console.log(err);
 //       });
 //   };
-// }
+// };
 
 export const errorMessage = (error) => {
   return { type: ERROR_MESSAGE, payload: error };

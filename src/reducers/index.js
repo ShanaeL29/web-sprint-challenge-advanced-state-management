@@ -37,9 +37,13 @@ const reducer = (state = initialState, action) => {
         errorMessage: action.payload,
       };
     case ADD_SMURF:
+      const newSmurf = {
+        ...action.payload,
+        id: Date.now(),
+      };
       return {
         ...state,
-        smurfs: [...state.smurfs, action.payload],
+        smurfs: [...state.smurfs, newSmurf],
       };
     case ERROR_MESSAGE:
       console.log("this is error message");
