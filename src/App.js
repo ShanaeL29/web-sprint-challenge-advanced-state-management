@@ -6,7 +6,6 @@ import AddForm from "./components/AddForm";
 import SmurfList from "./components/SmurfList";
 import Header from "./components/Header";
 
-// import { fetchSmurfs, fetchStart, fetchSuccess, fetchFail } from "./actions";
 import { fetchSmurfs } from "./actions";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -31,27 +30,11 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ data = {} }) => ({
+const mapActionsToProps = ({ data = {} }) => ({
   data,
 });
 
-export default connect(mapStateToProps, { fetchSmurfs })(App);
-
-// const mapActionsToProps = () => {
-//   return {
-//     // fetchSmurfs: fetchSmurfs,
-//     fetchStart: fetchStart,
-//     fetchSuccess: fetchSuccess,
-//     fetchFail: fetchFail,
-//   };
-// };
-
-// export default connect(mapActionsToProps, {
-//   // fetchSmurfs,
-//   fetchStart,
-//   fetchSuccess,
-//   fetchFail,
-// })(App);
+export default connect(mapActionsToProps, { fetchSmurfs })(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
