@@ -36,19 +36,16 @@ const reducer = (state = initialState, action) => {
         isLoading: false,
         errorMessage: action.payload,
       };
-    // ----------------------------------------------------------------------------------------------
     case ADD_SMURF:
       return {
         ...state,
         smurfs: [...state.smurfs, action.payload],
       };
-    // -----------------------------------------------------------------------------------------
     case ERROR_MESSAGE:
       console.log("this is error message");
       return {
         ...state,
-        // errorMessage: "An error has occurred",
-        errorMessage: action.payload,
+        errorMessage: "An error has occurred",
       };
 
     default:

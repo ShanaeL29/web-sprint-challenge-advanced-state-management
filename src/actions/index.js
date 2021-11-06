@@ -1,6 +1,5 @@
 import axios from "axios";
 
-//action type
 export const FETCH_SMURFS = "FETCH_SMURFS";
 
 export const FETCH_START = "FETCH_START";
@@ -9,7 +8,6 @@ export const FETCH_FAIL = "FETCH_FAIL";
 export const ADD_SMURF = "ADD_SMURF";
 export const ERROR_MESSAGE = "ERROR_MESSAGE";
 
-//action creators
 export function fetchSmurfs() {
   return function (dispatch) {
     dispatch(fetchStart());
@@ -26,7 +24,6 @@ export function fetchSmurfs() {
   };
 }
 
-//actions
 export const fetchStart = () => {
   return { type: FETCH_START };
 };

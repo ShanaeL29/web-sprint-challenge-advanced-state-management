@@ -12,8 +12,7 @@ const AddForm = (props) => {
   });
 
   const [error, setError] = useState("");
-  //remove when error state is added
-  // const errorMessage = "";
+
   const errorMessage = props.errorMessage;
 
   const handleChange = (e) => {
@@ -26,11 +25,9 @@ const AddForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (state.name === "" || state.position === "" || state.nickname === "") {
-      //add in error action
       setError("Name, position and nickname fields are required.");
     } else {
-      //   props.addSmurf(name, position, nickname, description);
-      props.addSmurf(state);
+      props.addSmurf(name, position, nickname, description);
     }
   };
 
