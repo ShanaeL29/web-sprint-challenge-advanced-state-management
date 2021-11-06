@@ -36,27 +36,27 @@ export const fetchFail = (error) => {
   return { type: FETCH_FAIL, payload: error };
 };
 
-// export const addSmurf = (data) => {
-//   return { type: ADD_SMURF, payload: data };
-// };
+export const addSmurf = (data) => {
+  return { type: ADD_SMURF, payload: data };
+};
 
-export function addSmurf(name, nickname, position, description) {
-  return function () {
-    return axios
-      .post(`http://localhost:3333/smurfs`, {
-        name,
-        nickname,
-        position,
-        description,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-}
+// export function addSmurf(name, nickname, position, description) {
+//   return function () {
+//     return axios
+//       .post(`http://localhost:3333/smurfs`, {
+//         name,
+//         nickname,
+//         position,
+//         description,
+//       })
+//       .then((res) => {
+//         console.log(res);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   };
+// }
 
 export const errorMessage = (error) => {
   return { type: ERROR_MESSAGE, payload: error };
