@@ -13,7 +13,7 @@ const AddForm = (props) => {
 
   const [error, setError] = useState("");
 
-  const errorMessage = props.errorMessage;
+  const errorMessage = error;
 
   const handleChange = (e) => {
     setState({
@@ -82,7 +82,7 @@ const AddForm = (props) => {
             className="alert alert-danger"
             role="alert"
           >
-            Error: {props.errorMessage}
+            Error: {error}
           </div>
         )}
         <button>Submit Smurf</button>
