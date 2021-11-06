@@ -49,7 +49,7 @@ const reducer = (state = initialState, action) => {
       console.log("this is error message");
       return {
         ...state,
-        errorMessage: "An error has occurred",
+        errorMessage: action.payload,
       };
 
     default:

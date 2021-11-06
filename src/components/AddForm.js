@@ -81,7 +81,7 @@ const AddForm = (props) => {
             className="alert alert-danger"
             role="alert"
           >
-            Error: {error}
+            Error: {errorMessage}
           </div>
         )}
         <button>Submit Smurf</button>
